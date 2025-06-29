@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Image optimization with external domains for Unsplash
+  // Image optimization with external domains
   images: {
     formats: ['image/webp', 'image/avif'],
-    domains: ['images.unsplash.com'],
     remotePatterns: [
       {
         protocol: 'https',

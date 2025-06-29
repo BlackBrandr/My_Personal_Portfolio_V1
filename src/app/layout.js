@@ -63,6 +63,19 @@ export const metadata = {
       "max-image-preview": "large",
       "max-snippet": -1
     }
+  },
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/profile.png', sizes: '950x855', type: 'image/png' },
+    ],
+    shortcut: '/favicon-32x32.png',
+    apple: '/apple-touch-icon.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/apple-touch-icon.png',
+    },
   }
 };
 
