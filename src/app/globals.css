@@ -377,10 +377,9 @@ body {
   }
   
   /* Force GPU acceleration for better mobile performance */
-  .hover\\:scale-105:hover,
-  .hover\\:scale-110:hover,
   .group:hover *,
-  [class*="group-hover"] {
+  [class*="group-hover"],
+  [class*="hover:scale"] {
     transform: translateZ(0);
   }
   
@@ -402,12 +401,12 @@ body {
 /* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
   /* Mobile touch devices */
-  .group:active .group-hover\\:scale-110 {
+  .group:active [class*="group-hover:scale"] {
     transform: scale(1.05) translateZ(0);
     transition: transform 0.2s ease;
   }
   
-  .hover\\:scale-105:active {
+  [class*="hover:scale"]:active {
     transform: scale(1.03) translateZ(0);
     transition: transform 0.2s ease;
   }
