@@ -41,8 +41,8 @@ export default function Contact() {
         </svg>
       ),
       title: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com'
+      value: 'burakkaratas2001@gmail.com',
+      link: 'mailto:burakkaratas2001@gmail.com'
     },
     {
       icon: (
@@ -51,8 +51,8 @@ export default function Contact() {
         </svg>
       ),
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+90 (541) 808 4741',
+      link: 'tel:+90 (541) 808 4741'
     },
     {
       icon: (
@@ -62,7 +62,7 @@ export default function Contact() {
         </svg>
       ),
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Istanbul, Turkey',
       link: null
     }
   ]
@@ -147,7 +147,7 @@ export default function Contact() {
               </h4>
               <div className="flex justify-center space-x-6">
                 <motion.a
-                  href="https://github.com/burakkaratas"
+                  href="https://github.com/BlackBrandr"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -159,7 +159,7 @@ export default function Contact() {
                   </svg>
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com/in/burak-karatas"
+                  href="https://www.linkedin.com/in/burakkaratas2001/"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, rotate: -5 }}
@@ -171,7 +171,7 @@ export default function Contact() {
                   </svg>
                 </motion.a>
                 <motion.a
-                  href="https://twitter.com/burakkaratas"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -183,7 +183,7 @@ export default function Contact() {
                   </svg>
                 </motion.a>
                 <motion.a
-                  href="https://instagram.com/burakkaratas"
+                  href="https://instagram.com/burakkaratas07"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, rotate: -5 }}
@@ -195,7 +195,7 @@ export default function Contact() {
                   </svg>
                 </motion.a>
                 <motion.a
-                  href="https://youtube.com/@burakkaratas"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, rotate: 5 }}

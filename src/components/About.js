@@ -55,22 +55,23 @@ export default function About() {
 
   const experiences = [
     {
-      title: 'Senior Software Developer',
-      company: 'Tech Company',
-      period: '2022 - Present',
-      description: 'Leading development of scalable web applications using React and Node.js'
+      title: 'Product Development Specialist',
+      company: 'Doktorsitesi ',
+      period: '2025 - Present',
+      description: 'I take part in the development of AI tools and virtual POS payment integrations.'
     },
     {
-      title: 'Full Stack Developer',
-      company: 'Digital Agency',
-      period: '2020 - 2022',
-      description: 'Built responsive web applications and RESTful APIs for various clients'
+      title: 'Technical Co-Founder',
+      company: 'ByBike Micromobility Technologies',
+      period: '2022 - 2024',
+      description: 'I led the end-to-end development of a scalable micromobility software infrastructure, ' +
+          'from designing the system architecture to implementing backend services, ensuring a robust and efficient operational structure.'
     },
     {
-      title: 'Frontend Developer',
-      company: 'Startup Inc.',
-      period: '2019 - 2020',
-      description: 'Developed user interfaces and improved user experience for SaaS products'
+      title: 'Product Development Specialist',
+      company: 'Bitay Turkiye (Coincenter) Inc.',
+      period: '2022 - 2023',
+      description: 'I spearheaded the design and development of a comprehensive staking mechanism and a customer loyalty program.'
     }
   ]
 

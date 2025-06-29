@@ -10,7 +10,7 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
+      title: 'ByBike Micromobility Infrastructure',
       description: 'A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80',
       technologies: ['React', 'Java', 'Spring Boot', 'PostgreSQL'],
@@ -21,7 +21,7 @@ export default function Projects() {
     },
     {
       id: 2,
-      title: 'Task Management App',
+      title: 'Bitay (Coincenter) Stake Mechanism ',
       description: 'A collaborative task management application with real-time updates, team collaboration features.',
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80',
       technologies: ['Next.js', 'Java', 'Spring Boot', 'MySQL'],
@@ -32,44 +32,11 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: 'Portfolio Website',
+      title: 'Bitay Loyalty Program',
       description: 'A responsive portfolio website showcasing projects and skills with modern design and animations.',
       image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80',
       technologies: ['React', 'Next.js', 'Tailwind', 'Framer Motion'],
       category: 'frontend',
-      demoUrl: '#',
-      githubUrl: '#',
-      featured: false
-    },
-    {
-      id: 4,
-      title: 'Weather Dashboard',
-      description: 'A weather dashboard with location-based forecasts, interactive maps, and weather alerts.',
-      image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80',
-      technologies: ['React', 'JavaScript', 'API Integration'],
-      category: 'frontend',
-      demoUrl: '#',
-      githubUrl: '#',
-      featured: false
-    },
-    {
-      id: 5,
-      title: 'REST API Service',
-      description: 'A scalable REST API with authentication, rate limiting, and comprehensive documentation.',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80',
-      technologies: ['Java', 'Spring Boot', 'PostgreSQL'],
-      category: 'backend',
-      demoUrl: '#',
-      githubUrl: '#',
-      featured: false
-    },
-    {
-      id: 6,
-      title: 'Analytics Dashboard',
-      description: 'A data visualization dashboard with real-time analytics, charts, and reporting features.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80',
-      technologies: ['React', 'Java', 'Spring Boot', 'MongoDB'],
-      category: 'fullstack',
       demoUrl: '#',
       githubUrl: '#',
       featured: false
@@ -78,7 +45,7 @@ export default function Projects() {
 
   const categories = [
     { id: 'all', name: 'All Projects' },
-    { id: 'fullstack', name: 'Full Stack' },
+    { id: 'fullstack', name: 'Product Development' },
     { id: 'frontend', name: 'Frontend' },
     { id: 'backend', name: 'Backend' }
   ]
@@ -259,7 +226,7 @@ export default function Projects() {
           className="text-center mt-12"
         >
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/BlackBrandr"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-colors duration-200"
