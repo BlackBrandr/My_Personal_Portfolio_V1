@@ -34,11 +34,11 @@ export const metadata = {
   openGraph: {
     title: "Burak Karataş | Software & Product Developer",
     description: "Experienced software & product developer specializing in React, Next.js, and full-stack development.",
-    url: "https://yourwebsite.com",
+    url: "https://burakkaratas.com",
     siteName: "Burak Karataş",
     images: [
       {
-        url: "https://yourwebsite.com/og-image.jpg",
+        url: "https://burakkaratas.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Burak Karataş - Software Developer Portfolio"
@@ -51,7 +51,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Burak Karataş | Software & Product Developer",
     description: "Experienced software & product developer specializing in React, Next.js, and full-stack development.",
-    images: ["https://yourwebsite.com/twitter-image.jpg"]
+    images: ["https://burakkaratas.com/twitter-image.jpg"]
   },
   robots: {
     index: true,

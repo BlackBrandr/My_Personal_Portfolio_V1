@@ -21,23 +21,31 @@ export default function Contact() {
     setSubmitStatus(null)
 
     try {
-      // EmailJS configuration using environment variables
-      const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: data.name,
-          from_email: data.email,
-          subject: data.subject || 'New Contact Form Message',
-          message: data.message,
-          to_name: 'Burak Karataş',
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      )
+      // Check if EmailJS is configured
+      if (process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID) {
+        // EmailJS configuration using environment variables
+        const result = await emailjs.send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+          {
+            from_name: data.name,
+            from_email: data.email,
+            subject: data.subject || 'New Contact Form Message',
+            message: data.message,
+            to_name: 'Burak Karataş',
+          },
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        )
 
-      console.log('Email sent successfully:', result.text)
-      setSubmitStatus('success')
-      reset()
+        console.log('Email sent successfully:', result.text)
+        setSubmitStatus('success')
+        reset()
+      } else {
+        // Fallback: Log to console if EmailJS not configured
+        console.log('EmailJS not configured. Form data:', data)
+        alert('EmailJS not configured yet. Please check the setup guide.')
+        setSubmitStatus('error')
+      }
     } catch (error) {
       console.error('Email send failed:', error)
       setSubmitStatus('error')
