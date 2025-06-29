@@ -11,30 +11,33 @@ export default function Projects() {
     {
       id: 1,
       title: 'ByBike Micromobility Infrastructure',
-      description: 'A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80',
+      description: 'ByBike Micromobility provides an end-to-end mobility platform for operators. ' +
+          'It enables seamless payment, bike unlocking, and real-time fleet management.\n\nByBike helps cities offer efficient and sustainable micro-mobility services.',
+      image: '/Card Photos/ByBike  Card .png',
       technologies: ['React', 'Java', 'Spring Boot', 'PostgreSQL'],
       category: 'fullstack',
-      demoUrl: '#',
+      demoUrl: 'https://www.bybike.tech/',
       githubUrl: '#',
       featured: true
     },
     {
       id: 2,
       title: 'Bitay (Coincenter) Stake Mechanism ',
-      description: 'A collaborative task management application with real-time updates, team collaboration features.',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80',
+      description: 'Bitay Coin staking lets users lock coins to secure the network and earn rewards. It provides passive income with daily or weekly payouts. ' +
+          'Financially, it helps users grow holdings while holding assets. \n\nTechnologically, it strengthens blockchain security and efficiency.',
+      image: '/Card Photos/bitay coin stake card.jpg',
       technologies: ['Next.js', 'Java', 'Spring Boot', 'MySQL'],
       category: 'fullstack',
       demoUrl: '#',
       githubUrl: '#',
-      featured: true
+      featured: false
     },
     {
       id: 3,
       title: 'Bitay Loyalty Program',
-      description: 'A responsive portfolio website showcasing projects and skills with modern design and animations.',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80',
+      description: 'Bitay+ is a loyalty program rewarding active users with extra benefits. Users earn points from trading and staking, ' +
+          'which can be used for fee discounts or special perks. It helps increase user engagement while adding extra value to their activities.',
+      image: '/Card Photos/bitay card 2.jpg',
       technologies: ['React', 'Next.js', 'Tailwind', 'Framer Motion'],
       category: 'frontend',
       demoUrl: '#',
@@ -124,7 +127,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -137,13 +140,11 @@ export default function Projects() {
               }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`group relative bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden ${
+              className={`group relative bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full ${
                 project.featured ? 'ring-2 ring-blue-500' : ''
               }`}
             >
-              {/* Hover Light Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur"></div>
-              <div className="relative bg-white dark:bg-gray-900 rounded-xl overflow-hidden">
+              <div className="relative bg-white dark:bg-gray-900 rounded-xl overflow-hidden h-full flex flex-col">
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
                   <Image 
@@ -162,53 +163,47 @@ export default function Projects() {
                 </div>
 
               {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
-                  {project.description}
-                </p>
+              <div className="p-6 flex flex-col h-full">
+                <div className="flex-grow">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed whitespace-pre-line">
+                    {project.description}
+                  </p>
 
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => {
-                    const colors = [
-                      'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200',
-                      'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200',
-                      'bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200',
-                      'bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200',
-                      'bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200',
-                      'bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200'
-                    ];
-                    return (
-                      <span
-                        key={tech}
-                        className={`px-3 py-1 ${colors[techIndex % colors.length]} text-xs font-medium rounded-full transition-transform duration-200 hover:scale-110`}
-                      >
-                        {tech}
-                      </span>
-                    );
-                  })}
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => {
+                      const colors = [
+                        'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200',
+                        'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200',
+                        'bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200',
+                        'bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200',
+                        'bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200',
+                        'bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200'
+                      ];
+                      return (
+                        <span
+                          key={tech}
+                          className={`px-3 py-1 ${colors[techIndex % colors.length]} text-xs font-medium rounded-full transition-transform duration-200 hover:scale-110`}
+                        >
+                          {tech}
+                        </span>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
+                <div className="flex justify-center mt-auto">
                   <a
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition-colors duration-200 text-sm font-medium"
+                    className="bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg transition-colors duration-200 text-sm font-medium"
                   >
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 text-center py-2 px-4 rounded-lg transition-colors duration-200 text-sm font-medium"
-                  >
-                    GitHub
+                    View Project
                   </a>
                 </div>
               </div>

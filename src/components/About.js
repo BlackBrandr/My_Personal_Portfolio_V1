@@ -13,6 +13,9 @@ import GitIcon from './icons/GitIcon'
 import VercelIcon from './icons/VercelIcon'
 import FigmaIcon from './icons/FigmaIcon'
 import VSCodeIcon from './icons/VSCodeIcon'
+import PostgreSQLIcon from './icons/PostgreSQLIcon'
+import MongoDBIcon from './icons/MongoDBIcon'
+import MySQLIcon from './icons/MySQLIcon'
 
 export default function About() {
   const skillCategories = [
@@ -37,9 +40,9 @@ export default function About() {
     {
       category: 'Database Technologies',
       technologies: [
-        { name: 'PostgreSQL', icon: '🐘' },
-        { name: 'MongoDB', icon: '🍃' },
-        { name: 'MySQL', icon: '🐬' }
+        { name: 'PostgreSQL', icon: <PostgreSQLIcon className="w-8 h-8" /> },
+        { name: 'MongoDB', icon: <MongoDBIcon className="w-8 h-8" /> },
+        { name: 'MySQL', icon: <MySQLIcon className="w-8 h-8" /> }
       ]
     },
     {
@@ -48,7 +51,6 @@ export default function About() {
         { name: 'Git', icon: <GitIcon className="w-8 h-8" /> },
         { name: 'Vercel', icon: <VercelIcon className="w-8 h-8" /> },
         { name: 'Figma', icon: <FigmaIcon className="w-8 h-8" /> },
-        { name: 'VS Code', icon: <VSCodeIcon className="w-8 h-8" /> }
       ]
     }
   ]
@@ -111,14 +113,20 @@ export default function About() {
                 <span className="text-gradient-blue">My Story</span>
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 font-inter leading-relaxed text-lg">
-                With over <span className="font-semibold text-blue-600 dark:text-blue-400">4 years</span> of experience in software development, I specialize in building 
-                modern web applications that provide exceptional user experiences. My journey began 
-                with a curiosity about how things work, which led me to discover the world of programming.
+                With over <span className="font-semibold text-blue-600 dark:text-blue-400">4 years</span> of experience as a <span className="font-semibold text-blue-600 dark:text-blue-400">product developer</span> and
+                <span className="font-semibold text-blue-600 dark:text-blue-400"> software developer</span>,
+                I specialize in building end-to-end products—from designing intuitive user experiences and scalable infrastructures to delivering production-ready software
+                aligned with business needs.</p>
+
+              <p className="text-gray-600 dark:text-gray-300 mb-6 font-inter leading-relaxed text-lg">
+                My journey began with a curiosity about how things work, evolving into a passion for transforming ideas into impactful digital
+                products. I excel at understanding <span className="font-semibold text-blue-600 dark:text-blue-400">business requirements</span> and translating them into efficient, maintainable,
+                and scalable software solutions, ensuring that every product I build serves real user needs while maintaining technical excellence.
               </p>
-              <p className="text-gray-600 dark:text-gray-300 font-inter leading-relaxed text-lg">
-                I believe in writing <span className="font-medium text-gray-700 dark:text-gray-200">clean, maintainable code</span> and staying up-to-date with the latest 
-                technologies. When I&apos;m not coding, you can find me exploring new frameworks, contributing 
-                to open source projects, or sharing knowledge with the developer community.
+
+              <p className="text-gray-600 dark:text-gray-300 mb-6 font-inter leading-relaxed text-lg">
+                I believe in writing clean, maintainable code and staying up-to-date with the latest technologies. When I’m not coding, I’m exploring new frameworks,
+                contributing to open-source projects, or sharing knowledge with the developer community, always aiming to grow while enabling others to grow alongside me.
               </p>
             </div>
 
