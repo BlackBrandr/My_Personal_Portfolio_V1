@@ -311,3 +311,55 @@ body {
   background-size: 200% 200%;
   animation: gradient-shift 4s ease infinite;
 }
+
+/* Mobile Animation Optimizations */
+@media (max-width: 768px) {
+  /* Ensure animations work on mobile by forcing hardware acceleration */
+  .motion-div, [class*="motion-"], .group {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Reduce motion intensity for mobile performance */
+  * {
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+  
+  /* Ensure framer-motion animations work on mobile */
+  .motion-safe {
+    will-change: transform, opacity;
+  }
+  
+  /* Force GPU acceleration for better mobile performance */
+  .hover\\:scale-105:hover,
+  .hover\\:scale-110:hover,
+  .group:hover *,
+  [class*="group-hover"] {
+    transform: translateZ(0);
+  }
+}
+
+/* Ensure animations work regardless of user motion preferences on mobile */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.2s !important;
+    transition-duration: 0.2s !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Mobile touch devices */
+  .group:active .group-hover\\:scale-110 {
+    transform: scale(1.05) translateZ(0);
+    transition: transform 0.2s ease;
+  }
+  
+  .hover\\:scale-105:active {
+    transform: scale(1.03) translateZ(0);
+    transition: transform 0.2s ease;
+  }
+}

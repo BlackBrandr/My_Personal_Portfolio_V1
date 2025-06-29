@@ -92,7 +92,11 @@ export default function Projects() {
               key={category.id}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.1,
+                ease: "easeOut"
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setFilter(category.id)}
@@ -138,8 +142,17 @@ export default function Projects() {
                 y: -10,
                 transition: { duration: 0.3 }
               }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.1,
+                ease: "easeOut"
+              }}
+              viewport={{ 
+                once: true,
+                margin: "-100px",
+                amount: 0.3
+              }}
               className={`group relative bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full ${
                 project.featured ? 'ring-2 ring-blue-500' : ''
               }`}

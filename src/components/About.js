@@ -211,11 +211,17 @@ export default function About() {
                           rotate: [0, -1, 1, 0],
                           transition: { duration: 0.3 }
                         }}
+                        whileTap={{ scale: 0.95 }}
                         transition={{ 
                           duration: 0.4, 
-                          delay: (categoryIndex * 0.1) + (techIndex * 0.05)
+                          delay: (categoryIndex * 0.1) + (techIndex * 0.05),
+                          ease: "easeOut"
                         }}
-                        viewport={{ once: true }}
+                        viewport={{ 
+                          once: true,
+                          margin: "-50px",
+                          amount: 0.3
+                        }}
                         className="group"
                       >
                         <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:border-blue-300 dark:hover:border-blue-600 hover:-translate-y-1">
