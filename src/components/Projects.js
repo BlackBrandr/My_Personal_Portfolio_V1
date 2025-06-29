@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Projects() {
   const [filter, setFilter] = useState('all')
@@ -178,14 +179,16 @@ export default function Projects() {
               <div className="relative bg-white dark:bg-gray-900 rounded-xl overflow-hidden">
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <Image 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   {project.featured && (
-                    <div className="absolute top-4 right-4 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                    <div className="absolute top-4 right-4 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-medium z-10">
                       Featured
                     </div>
                   )}

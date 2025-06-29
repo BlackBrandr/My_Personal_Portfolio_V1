@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Hero() {
   const scrollToSection = (sectionId) => {
@@ -39,27 +40,23 @@ export default function Hero() {
             className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-0"
           >
             <div className="relative">
-              {/* Multiple gradient layers for depth */}
-              <div className="absolute -inset-16 bg-gradient-to-br from-blue-500/12 via-purple-500/12 to-cyan-500/12 rounded-full blur-3xl"></div>
-              <div className="absolute -inset-12 bg-gradient-to-br from-blue-600/18 to-purple-600/18 rounded-full blur-2xl"></div>
-              <div className="absolute -inset-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full opacity-35 blur-lg"></div>
+              {/* Simplified gradient background */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-full blur-xl"></div>
               
               {/* Main photo with transparent background - Even Bigger */}
               <div className="relative w-[28rem] h-[28rem] flex items-center justify-center">
-                <img 
+                <Image 
                   src="/profile.png"
                   alt="Burak Karataş"
-                  className="w-full h-full object-contain opacity-88"
+                  width={448}
+                  height={448}
+                  className="object-contain opacity-88"
                   style={{
                     filter: 'contrast(1.05) brightness(1.05) saturate(1.1)',
                   }}
+                  priority
                 />
               </div>
-              
-              {/* Floating decorative elements */}
-              <div className="absolute -top-8 -right-8 w-10 h-10 bg-blue-500 rounded-full opacity-45 floating"></div>
-              <div className="absolute -bottom-6 -left-6 w-8 h-8 bg-purple-500 rounded-full opacity-45 floating-delay-1"></div>
-              <div className="absolute top-1/3 -left-10 w-6 h-6 bg-cyan-500 rounded-full opacity-45 floating-delay-2"></div>
             </div>
           </motion.div>
 

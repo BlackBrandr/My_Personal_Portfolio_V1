@@ -1,13 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable experimental features for better performance
-  experimental: {
-    optimizeCss: true,
-  },
-  
-  // Image optimization
+  // Image optimization with external domains for Unsplash
   images: {
     formats: ['image/webp', 'image/avif'],
+    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.licdn.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
   
   // Compression
