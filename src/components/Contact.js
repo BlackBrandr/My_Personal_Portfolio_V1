@@ -21,19 +21,30 @@ export default function Contact() {
     setSubmitStatus(null)
 
     try {
+      // Debug: Check environment variables
+      console.log('EmailJS Service ID:', process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID)
+      console.log('EmailJS Template ID:', process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID)
+      console.log('EmailJS Public Key:', process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+      
       // Check if EmailJS is configured
       if (process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID) {
         // EmailJS configuration using environment variables
+        const templateParams = {
+          from_name: data.name,
+          from_email: data.email,
+          subject: data.subject || 'New Contact Form Message',
+          message: data.message,
+          to_name: 'Burak Karataş',
+          reply_to: data.email,
+          user_subject: data.subject || 'General Inquiry'
+        }
+        
+        console.log('Sending email with params:', templateParams)
+        
         const result = await emailjs.send(
           process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
           process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-          {
-            from_name: data.name,
-            from_email: data.email,
-            subject: data.subject || 'New Contact Form Message',
-            message: data.message,
-            to_name: 'Burak Karataş',
-          },
+          templateParams,
           process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
         )
 
