@@ -4,7 +4,7 @@ import ThemeProvider from "@/providers/ThemeProvider";
 import Layout from "@/components/Layout";
 import StructuredData from "@/components/StructuredData";
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({ 
   subsets: ["latin"],
