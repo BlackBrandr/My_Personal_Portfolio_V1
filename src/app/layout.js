@@ -24,22 +24,22 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Portfolio - Your Name | Software & Product Developer",
+  title: "Burak Karataş | Software & Product Developer",
   description: "Experienced software & product developer specializing in React, Next.js, and full-stack development. View my projects and get in touch for collaborations.",
   keywords: "software developer, product developer, React, Next.js, JavaScript, full-stack, web development, portfolio",
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
+  authors: [{ name: "Burak Karataş" }],
+  creator: "Burak Karataş",
   openGraph: {
-    title: "Portfolio - Your Name | Software & Product Developer",
+    title: "Burak Karataş | Software & Product Developer",
     description: "Experienced software & product developer specializing in React, Next.js, and full-stack development.",
     url: "https://yourwebsite.com",
-    siteName: "Your Name Portfolio",
+    siteName: "Burak Karataş",
     images: [
       {
         url: "https://yourwebsite.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Your Name - Software Developer Portfolio"
+        alt: "Burak Karataş - Software Developer Portfolio"
       }
     ],
     locale: "en_US",
@@ -47,7 +47,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio - Your Name | Software & Product Developer",
+    title: "Burak Karataş | Software & Product Developer",
     description: "Experienced software & product developer specializing in React, Next.js, and full-stack development.",
     images: ["https://yourwebsite.com/twitter-image.jpg"]
   },
