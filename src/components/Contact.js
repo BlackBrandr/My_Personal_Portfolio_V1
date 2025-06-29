@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
+import emailjs from '@emailjs/browser'
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -20,13 +21,25 @@ export default function Contact() {
     setSubmitStatus(null)
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      console.log('Form data:', data)
+      // EmailJS configuration using environment variables
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: data.name,
+          from_email: data.email,
+          subject: data.subject || 'New Contact Form Message',
+          message: data.message,
+          to_name: 'Burak Karataş',
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+
+      console.log('Email sent successfully:', result.text)
       setSubmitStatus('success')
       reset()
     } catch (error) {
+      console.error('Email send failed:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

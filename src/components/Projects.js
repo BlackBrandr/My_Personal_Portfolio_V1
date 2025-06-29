@@ -3,9 +3,11 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useReducedMotion, getMobileOptimizedTransition } from '../hooks/useReducedMotion'
 
 export default function Projects() {
   const [filter, setFilter] = useState('all')
+  const { isMobile } = useReducedMotion()
 
   const projects = [
     {
@@ -131,11 +133,11 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch motion-container">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ 
                 scale: 1.05, 
@@ -143,15 +145,15 @@ export default function Projects() {
                 transition: { duration: 0.3 }
               }}
               whileTap={{ scale: 0.98 }}
-              transition={{ 
-                duration: 0.5, 
-                delay: index * 0.1,
+              transition={getMobileOptimizedTransition({
+                duration: 0.3, 
+                delay: index * 0.05,
                 ease: "easeOut"
-              }}
+              }, isMobile)}
               viewport={{ 
                 once: true,
-                margin: "-100px",
-                amount: 0.3
+                margin: "-150px",
+                amount: 0.2
               }}
               className={`group relative bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full ${
                 project.featured ? 'ring-2 ring-blue-500' : ''

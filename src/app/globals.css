@@ -312,19 +312,63 @@ body {
   animation: gradient-shift 4s ease infinite;
 }
 
+/* Prevent Flash of Unstyled Content */
+.motion-container {
+  visibility: hidden;
+  animation: fadeInContainer 0.1s ease forwards;
+}
+
+@keyframes fadeInContainer {
+  to {
+    visibility: visible;
+  }
+}
+
 /* Mobile Animation Optimizations */
 @media (max-width: 768px) {
+  /* Prevent initial flash by hiding elements until animated */
+  [data-animate="true"] {
+    opacity: 0;
+    transform: translateY(20px) translateZ(0);
+  }
+  
+  /* Immediate visibility for motion containers on mobile */
+  .motion-container {
+    visibility: visible;
+    animation: none;
+  }
+  
+  /* Prevent repaints during animations */
+  .motion-container > * {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+  
+  /* Optimize touch interactions */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  input, textarea {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+  
   /* Ensure animations work on mobile by forcing hardware acceleration */
   .motion-div, [class*="motion-"], .group {
     transform: translateZ(0);
     backface-visibility: hidden;
     perspective: 1000px;
+    will-change: transform, opacity;
   }
   
   /* Reduce motion intensity for mobile performance */
   * {
-    animation-duration: 0.3s !important;
-    transition-duration: 0.3s !important;
+    animation-duration: 0.2s !important;
+    transition-duration: 0.2s !important;
   }
   
   /* Ensure framer-motion animations work on mobile */
@@ -338,6 +382,11 @@ body {
   .group:hover *,
   [class*="group-hover"] {
     transform: translateZ(0);
+  }
+  
+  /* Prevent layout shift during animations */
+  .motion-container {
+    contain: layout style paint;
   }
 }
 

@@ -200,11 +200,11 @@ export default function About() {
                     </span>
                   </h4>
                   
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 motion-container">
                     {category.technologies.map((tech, techIndex) => (
                       <motion.div
                         key={tech.name}
-                        initial={{ opacity: 0, scale: 0.8 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         whileHover={{ 
                           scale: 1.05,
@@ -213,14 +213,14 @@ export default function About() {
                         }}
                         whileTap={{ scale: 0.95 }}
                         transition={{ 
-                          duration: 0.4, 
-                          delay: (categoryIndex * 0.1) + (techIndex * 0.05),
+                          duration: 0.2, 
+                          delay: typeof window !== 'undefined' && window.innerWidth <= 768 ? 0 : (categoryIndex * 0.05) + (techIndex * 0.02),
                           ease: "easeOut"
                         }}
                         viewport={{ 
                           once: true,
-                          margin: "-50px",
-                          amount: 0.3
+                          margin: "-100px",
+                          amount: 0.1
                         }}
                         className="group"
                       >
